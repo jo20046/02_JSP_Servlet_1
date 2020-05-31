@@ -7,9 +7,6 @@
 <body>
 <%
     String urlInput;
-    String infoText;
-    String buttonText;
-    String destination;
     boolean connectionOK;
 
     urlInput = request.getParameter("url");
@@ -26,22 +23,15 @@
         connectionOK = false;
     }
 
-    if (connectionOK) {
-        destination = "ausgabe.jsp";
-        infoText = "Eingegebene URL wurde gefunden. Weiter mit dem Button:";
-        buttonText = "Weiter";
-    } else {
-        destination = "eingabe.jsp";
-        infoText = "Eingegebene URL wurde nicht gefunden.";
-        buttonText = "Zur&uuml;ck";
-    }
-
     session.setAttribute("urlInput", urlInput);
+    if (connectionOK) {
+        response.sendRedirect("ausgabe.jsp");
+    }
 %>
 
-<form method="post" action=<%=destination%>>
-    <label><%=infoText%></label><br>
-    <input type="submit" value=<%=buttonText%>>
+<form method="post" action="eingabe.jsp">
+    <label>Eingegebene URL wurde nicht gefunden.</label><br>
+    <input type="submit" value="Zur&uuml;ck">
 </form>
 </body>
 </html>
