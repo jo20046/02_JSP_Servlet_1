@@ -3,11 +3,10 @@
       <title>Eingabe</title>
   </head>
   <body>
-  <form method="post" action="ausgabe.jsp">
+  <form method="post" action="pruefung.jsp">
       <label>URL: </label>
-      <input type="text" name="url" value=<%request.getParameter("url");%>><br><br>
+      <input type="text" name="url"><br><br>
       <input type="submit" value="Best&auml;tigen">
   </form>
-
   </body>
 </html>
