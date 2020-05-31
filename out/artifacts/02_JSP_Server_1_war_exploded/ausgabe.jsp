@@ -4,8 +4,8 @@
     <title>Ausgabe</title>
   </head>
   <body>
-  <%
-    out.println("URL: " + request.getParameter("url"));
-  %>
+
+    url: <%= session.getAttribute("urlInput") %>
+
   </body>
 </html>
