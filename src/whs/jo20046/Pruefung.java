@@ -33,7 +33,6 @@ public class Pruefung extends HttpServlet {
             connectionOK = false;
         }
 
-        // TODO: notFoundText wird angezeigt, wenn man zunächst eine falsche URL eingibt und danach dann eine richtige. Sollte ausgeblendet werden
         session.setAttribute("urlInput", urlInput);
         if (connectionOK) {
             session.setAttribute("notFoundText", "");
